@@ -1,5 +1,5 @@
 {% set name = "aiida-abinit" %}
-{% set version = "0.2.0a1" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aiida-abinit-{{ version }}.tar.gz
-  sha256: 9498d64e98df1b0710f51a7b188888553d05d619baa24b5afd92539a817503c3
+  sha256: 0dda4c549d380e36a0d31402040763bccdbf8d4782881a5dbc2bc791b4b17e3a
 
 build:
   noarch: python
