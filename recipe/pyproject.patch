@@ -1,0 +1,30 @@
+From 1f6c0ad30e7f21adafccb32ce9adbbc31234321c Mon Sep 17 00:00:00 2001
+From: Chris Sewell <chrisj_sewell@hotmail.com>
+Date: Mon, 27 Mar 2023 11:09:28 +0200
+Subject: [PATCH] fix aiida-core dependency
+
+---
+ pyproject.toml | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index 861f332..f8a3688 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -22,11 +22,10 @@ classifiers = [
+ keywords = ['aiida', 'abinit']
+ requires-python = '>=3.8'
+ dependencies = [
+-    'aiida_core[atomic_tools]~=1.6.3,<3.0.0',
+-    'aiida-pseudo~=0.6.1',
++    'aiida_core[atomic_tools]>=1.6.3,<3.0.0',
++    'aiida-pseudo>=0.6.1,<2.0.0',
+     'abipy>=0.8.0',
+     'packaging',
+-    'psycopg2-binary~=2.8.3',
+     'pymatgen>=2022.1.20',
+     'numpy',
+     'importlib_resources'
+-- 
+2.37.3
+

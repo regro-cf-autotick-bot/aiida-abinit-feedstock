@@ -1,5 +1,5 @@
 {% set name = "aiida-abinit" %}
-{% set version = "0.2.0a1" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,9 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aiida-abinit-{{ version }}.tar.gz
-  sha256: 9498d64e98df1b0710f51a7b188888553d05d619baa24b5afd92539a817503c3
+  sha256: 1af665b6bc5288ee9d85f2a2b1c91dd4a13aaafc1bf057a661a4b35e3d5725e2
+  patches:
+  - pyproject.patch
 
 build:
   noarch: python
@@ -16,15 +18,16 @@ build:
 
 requirements:
   host:
+    - flit-core
     - pip
-    - python >=3.6
-    - reentry
+    - python >=3.8
   run:
-    - aiida-core >=1.1.0,<2.0.0
-    - aiida-pseudo >=0.5.0
-    - python >=3.6
-    - six
-    - voluptuous
+    - aiida-core.atomic_tools >=1.6.3,<3.0.0
+    - aiida-pseudo >=0.6.1,<2.0.0
+    - abipy >=0.8.0
+    - importlib_resources
+    - packaging
+    - python >=3.8
 
 test:
   imports:
@@ -38,7 +41,7 @@ about:
   home: https://github.com/sponce24/aiida-abinit
   summary: The AiiDA plugin for ABINIT.
   license: MIT
-  license_file: LICENSE
+  license_file: LICENSE.txt
 
 extra:
   recipe-maintainers:
